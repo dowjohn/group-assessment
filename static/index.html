@@ -7,11 +7,49 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
-    <md-nav-bar md-selected-nav-item="currentNavItem">
-      <md-nav-item md-nav-click="goto('page1')" name="page1">Feed</md-nav-item>
-      <md-nav-item md-nav-sref="app.page2" name="page2">Saved?</md-nav-item>
-      <md-nav-item md-nav-href="#page3" name="page3">Profile</md-nav-item>
-    </md-nav-bar>
+
+    <md-toolbar layout="row" class="md-whiteframe-z1" layout-align="space-between center">
+      <div layout="row" layout-align="start center">
+        <md-button class="menu" ng-click="toggleLeft()" aria-label="Show Menu">
+          <md-icon md-svg-icon="menu"></md-icon>
+        </md-button>
+        <h1>Squawker</h1>
+      </div>
+
+        <div class="fim-dropdown" layout="row" class="user" layout-align="end center">
+          <label><md-icon class="md-fab" md-svg-src="~/Scripts/bower_components/material-design-icons/social/svg/design/ic_person_48px.svg"></md-icon></label>
+        </div>
+    </md-toolbar>
+
+    <div layout="column" flex id="content" role="main" style="padding-top: 50px;">
+      <md-content layout="vertical" flex id="content">
+        <div layout="row" layout-align="center center" layout-fill>
+          <md-whiteframe class="md-whiteframe-10dp" layout="column" flex="30" layout-padding>
+            <md-content md-theme="docs-dark">
+              
+              <md-input-container>
+                <label>Email</label>
+                <input ng-model="user.email">
+              </md-input-container>
+
+              <md-input-container>
+                <label>Password</label>
+                <input ng-model="user.password" type="password">
+              </md-input-container>
+
+              <md-input-container layout-align="center center">
+                <div layout="row" layout-sm="column" layout-margin>
+                  <md-button class="md-raised" flex="50" flex-sm="100">Login</md-button>
+                  <md-button class="md-raised md-primary" flex="50" flex-sm="100">Register</md-button>
+                </div>
+              </md-input-container>
+
+            </md-content>
+          </md-whiteframe>
+        </div>
+      </md-content>
+    </div>
+
     <base-app>
 
     </base-app>
