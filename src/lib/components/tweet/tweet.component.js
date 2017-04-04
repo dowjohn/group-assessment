@@ -12,8 +12,10 @@ const controller = class {
   content = ''
 
   makeTweet() {
+    let contentOfHere = this.content
+    this.content = ''
     return {
-      content: this.content,
+      content: contentOfHere,
       credentials: {
         password: this.password,
         username: this.username
@@ -22,7 +24,8 @@ const controller = class {
   }
 
   postTweet () {
-    let tweety = this.$http.post('http://localhost:8090/api/tweets', this.makeTweet()).then(function successCallback(response) {
+    this.$http.post('http://10.1.1.132:8090/api/tweets', this.makeTweet())
+    .then(function successCallback(response) {
       // this callback will be called asynchronously
       // when the response is available
       console.log('success')
