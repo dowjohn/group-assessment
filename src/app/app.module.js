@@ -6,8 +6,7 @@ import ngMaterial from 'angular-material'
 import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
-// import { clkButton } from 'components/button'
-// import { clkLabel } from 'components/label'
+import { tweet } from 'components/tweet'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -24,7 +23,7 @@ export default
       uiRouter
     ])
     .component('baseApp', baseApp)
-    // .component('clkButton', clkButton)
+    .component('tweet', tweet)
     // .component('clkLabel', clkLabel)
     .config(config)
     .config(routes)
