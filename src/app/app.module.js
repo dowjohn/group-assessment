@@ -22,7 +22,7 @@ export default
       ngMessages,
       uiRouter
     ])
-    // .component('clkApp', clkApp)
+    .component('baseApp', baseApp)
     // .component('clkButton', clkButton)
     // .component('clkLabel', clkLabel)
     .config(config)
