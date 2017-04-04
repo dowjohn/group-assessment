@@ -11,6 +11,7 @@ import uiRouter from 'angular-ui-router'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
+import { routes } from './app.routes'
 import { run } from './app.run'
 
 export default
@@ -26,5 +27,6 @@ export default
     // .component('clkButton', clkButton)
     // .component('clkLabel', clkLabel)
     .config(config)
+    .config(routes)
     .run(run)
     .name
