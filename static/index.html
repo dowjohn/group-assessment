@@ -8,7 +8,7 @@
   </head>
   <body>
 
-    <md-toolbar layout="row" class="md-whiteframe-z1" layout-align="space-between center">
+    <!-- <md-toolbar layout="row" class="md-whiteframe-z1" layout-align="space-between center">
       <div layout="row" layout-align="start center">
         <md-button class="menu" ng-click="toggleLeft()" aria-label="Show Menu">
           <md-icon md-svg-icon="menu"></md-icon>
@@ -19,7 +19,25 @@
         <div class="fim-dropdown" layout="row" class="user" layout-align="end center">
           <label><md-icon class="md-fab" md-svg-src="~/Scripts/bower_components/material-design-icons/social/svg/design/ic_person_48px.svg"></md-icon></label>
         </div>
-    </md-toolbar>
+    </md-toolbar> -->
+
+  <md-toolbar layout="row" class="md-whiteframe-z1" layout-align="space-between center">
+    <div layout="row" layout-align="start center">
+      <h1>Squawker</h1>
+    </div>
+
+    <!-- Unhide these elements once user is logged in -->
+    <md-input-container style="display: none">
+        <label style="color: white">Search</label>
+        <!-- Fix the model for searching later. Text input will not work until then
+             and you will see no text typed in until then. -->
+        <input ng-model=""> 
+    </md-input-container>
+      
+    <md-button class="md-raised" aria-label="Learn More" layout-align="end center" style="display:none;">
+        Log off
+    </md-button>
+  </md-toolbar>
 
     <div layout="column" flex id="content" role="main" style="padding-top: 50px;">
       <md-content layout="vertical" flex id="content">
