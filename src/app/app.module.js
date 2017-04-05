@@ -7,11 +7,16 @@ import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
 import { tweet } from 'components/tweet'
+import { userDetails } from 'components/userDetails'
+import { users } from 'components/users'
+import { logIn } from 'components/logIn'
+
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
 import { routes } from './app.routes'
 import { run } from './app.run'
+
 
 export default
   angular
@@ -24,7 +29,9 @@ export default
     ])
     .component('baseApp', baseApp)
     .component('tweet', tweet)
-    // .component('clkLabel', clkLabel)
+    .component('userDetails', userDetails)
+    .component('users', users)
+    .component('logIn', logIn)
     .config(config)
     .config(routes)
     .run(run)
