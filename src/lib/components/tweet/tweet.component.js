@@ -23,7 +23,7 @@ const controller = class {
   }
 
   postTweet () {
-    this.$http.post('http://10.1.1.132:8090/api/tweets', this.makeTweet())
+    this.$http.post('http://10.1.1.203:8090/api/tweets', this.makeTweet())
     .then(function successCallback (response) {
       // this callback will be called asynchronously
       // when the response is available

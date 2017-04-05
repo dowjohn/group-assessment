@@ -7,6 +7,7 @@ import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
 import { tweet } from 'components/tweet'
+import { createUser } from 'components/createuser'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -24,7 +25,7 @@ export default
     ])
     .component('baseApp', baseApp)
     .component('tweet', tweet)
-    // .component('clkLabel', clkLabel)
+    .component('createUser', createUser)
     .config(config)
     .config(routes)
     .run(run)
