@@ -5,8 +5,10 @@ const controller =
 /* @ngInject */
   class {
     styles = styles
-    username = 'string'
-    password = 'string'
+    credentials = {
+      username: 'string',
+      password: 'string'
+    }
   }
 
 export const baseApp = {

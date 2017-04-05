@@ -14,10 +14,7 @@ const controller = class {
     this.content = ''
     return {
       content: contentOfHere,
-      credentials: {
-        password: this.pass,
-        username: this.user
-      }
+      credentials: this.creds
     }
   }
 
@@ -38,8 +35,7 @@ const controller = class {
 export const tweet = {
   templateUrl,
   bindings: {
-    user: '<',
-    pass: '<'
+    creds: '<'
   },
   controller,
   controllerAs: 'tweet'
