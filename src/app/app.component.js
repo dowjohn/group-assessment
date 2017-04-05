@@ -2,10 +2,11 @@ import styles from './app.styles'
 import templateUrl from './app.template'
 
 const controller =
-  /* @ngInject */
+/* @ngInject */
   class {
-    username = 'loggedinorsomething'
-    password
+    styles = styles
+    username = 'string'
+    password = 'string'
   }
 
 export const baseApp = {
