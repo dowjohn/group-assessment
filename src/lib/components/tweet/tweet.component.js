@@ -19,14 +19,10 @@ const controller = class {
   }
 
   postTweet () {
-    this.$http.post('http://10.1.1.203:8090/api/tweets', this.makeTweet())
+    this.$http.post('http://localhost:8090/api/tweets', this.makeTweet())
     .then(function successCallback (response) {
-      // this callback will be called asynchronously
-      // when the response is available
       console.log('success')
     }, function errorCallback (response) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
       console.log('failed')
     })
   }

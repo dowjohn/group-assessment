@@ -7,6 +7,8 @@ import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
 import { tweet } from 'components/tweet'
+import { tweetDumb } from 'components/tweet-dumb'
+import { feed } from 'components/feed'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -24,7 +26,8 @@ export default
     ])
     .component('baseApp', baseApp)
     .component('tweet', tweet)
-    // .component('clkLabel', clkLabel)
+    .component('tweetDumb', tweetDumb)
+    .component('feed', feed)
     .config(config)
     .config(routes)
     .run(run)
