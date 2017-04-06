@@ -7,7 +7,6 @@ const controller = class {
     this.$http = $http
   }
   styles = styles
-  password = 'string'
   content = ''
 
   makeTweet () {
@@ -15,22 +14,15 @@ const controller = class {
     this.content = ''
     return {
       content: contentOfHere,
-      credentials: {
-        password: this.password,
-        username: this.user
-      }
+      credentials: this.creds
     }
   }
 
   postTweet () {
     this.$http.post('http://10.1.1.203:8090/api/tweets', this.makeTweet())
     .then(function successCallback (response) {
-      // this callback will be called asynchronously
-      // when the response is available
       console.log('success')
     }, function errorCallback (response) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
       console.log('failed')
     })
   }
@@ -39,7 +31,7 @@ const controller = class {
 export const tweet = {
   templateUrl,
   bindings: {
-    user: '<'
+    creds: '<'
   },
   controller,
   controllerAs: 'tweet'
