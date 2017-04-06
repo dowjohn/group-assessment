@@ -1,25 +1,25 @@
-import styles from './feed.styles'
-import templateUrl from './feed.template'
+import styles from './alltweets.styles'
+import templateUrl from './alltweets.template'
 
 const controller = class {
   constructor (dataservice) {
     this.dataservice = dataservice
     this.tweets = []
-    this.setFeed()
+    this.getTweets()
   }
   styles = styles
-  setFeed () {
-    this.dataservice.getFeed(this.creds.username).then(value => {
+  setTweets () {
+    this.dataservice.getTweets().then(value => {
       this.tweets = value
     })
   }
 }
 
-export const feed = {
+export const alltweets = {
   templateUrl,
   bindings: {
     creds: '<'
   },
   controller,
-  controllerAs: 'feed'
+  controllerAs: 'alltweets'
 }

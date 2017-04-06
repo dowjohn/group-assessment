@@ -2,29 +2,23 @@ import styles from './tweet.styles'
 import templateUrl from './tweet.template'
 
 const controller = class {
-  static $inject = ['$http']
-  constructor ($http) {
-    this.$http = $http
+  constructor (dataservice) {
+    this.dataservice = dataservice
   }
   styles = styles
   content = ''
 
   makeTweet () {
-    let contentOfHere = this.content
-    this.content = ''
     return {
-      content: contentOfHere,
+      content: this.content,
       credentials: this.creds
     }
   }
 
-  postTweet () {
-    this.$http.post('http://localhost:8090/api/tweets', this.makeTweet())
-    .then(function successCallback (response) {
-      console.log('success')
-    }, function errorCallback (response) {
-      console.log('failed')
-    })
+  tweet () {
+    console.log(this.makeTweet())
+    this.dataservice.postTweet(this.makeTweet())
+    this.content = ''
   }
 }
 
