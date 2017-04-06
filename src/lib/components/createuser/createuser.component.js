@@ -13,6 +13,26 @@ const controller = class {
   lastName = ''
   email = ''
   phoneNumber = ''
+  userCreds = ''
+  passCreds = ''
+
+  checkCreds () {
+    const credentials = {
+      username: this.userCreds,
+      password: this.passCreds
+    }
+    return credentials
+  }
+
+  validateCreds () {
+    console.log('button do work')
+    this.$http.post('http://10.1.1.203:8090/api/validate/login', this.checkCreds())
+    .then(function successCallback (response) {
+      console.log(response)
+    }, function errorCallback (response) {
+      console.log(response)
+    })
+  }
 
   makeUser () {
     const userInfo = {
@@ -32,7 +52,8 @@ const controller = class {
   }
 
   postUser () {
-    this.$http.post('http://10.1.1.203:8090/api/tweets', this.makeUser())
+    console.log('see if button is going through')
+    this.$http.post('http://10.1.1.203:8090/api/users', this.makeUser())
     .then(function successCallback (response) {
       // this callback will be called asynchronously
       // when the response is available
@@ -54,8 +75,7 @@ export const createUser = {
   templateUrl,
   controller,
   bindings: {
-    test: '<',
-    postUser: '='
+    test: '='
   },
   controllerAs: 'createUser'
 }
