@@ -5,7 +5,7 @@ const controller =
   /* @ngInject */
   class {
     username = 'loggedinorsomething'
-    password
+    password = 'whatwhatwhat'
   }
 
 export const baseApp = {

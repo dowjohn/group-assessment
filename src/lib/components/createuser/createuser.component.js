@@ -7,12 +7,12 @@ const controller = class {
     this.$http = $http
   }
   styles = styles
-  username = 'string'
-  password = 'string'
-  firstName = 'string'
-  lastName = 'string'
-  email = 'string'
-  phoneNumber = 'string'
+  username = ''
+  password = ''
+  firstName = ''
+  lastName = ''
+  email = ''
+  phoneNumber = ''
 
   makeUser () {
     const userInfo = {
@@ -43,14 +43,19 @@ const controller = class {
       console.log('failed')
     })
   }
+
+  testClick () {
+    console.log(this.makeUser())
+    console.log('check if makeUser is something')
+  }
 }
 
 export const createUser = {
   templateUrl,
   controller,
   bindings: {
-    username: '=',
-    password: '='
+    test: '<',
+    postUser: '='
   },
   controllerAs: 'createUser'
 }
