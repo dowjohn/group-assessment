@@ -4,17 +4,14 @@ export const routes =
     $stateProvider
     .state({
       name: 'baseApp',
-      redirectTo: '/home',
       component: 'baseApp'
     })
     .state({
-      parent: 'baseApp',
       name: 'home',
       url: '/home',
       component: 'logIn'
     })
     .state({
-      parent: 'baseApp',
       name: 'users',
       url: '/users',
       component: 'users'
@@ -25,13 +22,11 @@ export const routes =
       component: 'userDetails'
     })
     .state({
-      parent: 'baseApp',
       name: 'tags',
       url: '/tags',
       component: 'tags'
     })
     .state({
-      parent: 'baseApp',
       name: 'tweet',
       url: '/tweets',
       component: 'tweet'

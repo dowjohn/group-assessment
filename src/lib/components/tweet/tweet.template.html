@@ -1,7 +1,4 @@
-<div class="">
-  <form class="" method="post">
-    <label for="">TWEET</label>
-    <textarea ng-model="tweet.content" type="text" name="" value=""></textarea>
-    <md-button ng-click='tweet.postTweet()' class="md-raised">tweet</md-button>
-  </form>
-</div>
+<form class="" method="post">
+    <textarea placeholder="What's on your mind?" rows="5" cols="33" ng-model="tweet.content" type="text" name="" value=""></textarea>
+    <button type="button" class="btn btn-info" ng-click='tweet.postTweet()' class="md-raised">Tweet</button>
+</form>

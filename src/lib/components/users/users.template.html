@@ -1,6 +1,7 @@
 <div class="container">
-  <div class="info">
-    <userDetails></userDetails>
-    <p>Put user info here, yo! </p>
-  </div>
+    <h1>Search for users here, yo!</h1>
+    <input ng-model="users.users.query">
+    <ul>
+      <a href ng-repeat="user in users.users | filter:users.users.query"> {{user.name}}</a>
+    </ul>
 </div>

@@ -2,6 +2,7 @@ import styles from './tweet.styles'
 import templateUrl from './tweet.template'
 
 const controller = class {
+
   static $inject = ['$http']
   constructor ($http) {
     this.$http = $http
@@ -19,7 +20,7 @@ const controller = class {
   }
 
   postTweet () {
-    this.$http.post('http://10.1.1.203:8090/api/tweets', this.makeTweet())
+    this.$http.post('http://localhost:8080/api/tweets', this.makeTweet())
     .then(function successCallback (response) {
       // this callback will be called asynchronously
       // when the response is available
