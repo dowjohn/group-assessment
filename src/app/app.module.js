@@ -6,11 +6,14 @@ import ngMaterial from 'angular-material'
 import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
-import { tweet } from 'components/tweet'
+import { tweets } from 'components/tweets'
 import { userDetails } from 'components/userDetails'
 import { users } from 'components/users'
 import { logIn } from 'components/logIn'
+import { tags } from 'components/tags'
+import { alltweets } from 'components/alltweets'
 
+import { dataservice } from 'services/dataservice'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -28,10 +31,13 @@ export default
       uiRouter
     ])
     .component('baseApp', baseApp)
-    .component('tweet', tweet)
+    .component('tweets', tweets)
     .component('userDetails', userDetails)
     .component('users', users)
     .component('logIn', logIn)
+    .component('tags', tags)
+    .component('alltweets', alltweets)
+    .service('dataservice', dataservice)
     .config(config)
     .config(routes)
     .run(run)

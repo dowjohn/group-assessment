@@ -11,12 +11,10 @@
 <div class="container">
     <div class="row">
         <ul class="box">
-          <input size="25" placeholder="Find User" ng-model="users.users.query">
+          <input size="25" placeholder="Find Hashtag" ng-model="tags.tags.query">
 
-            <li ng-repeat="user in users.users | filter:users.users.query">
-                <h3>{{ user.name }}</h3>
-                <h4>{{ user.handle }}</h4>
-                <p>{{ user.bio }}</p>
+            <li ng-repeat="tag in tags.tags | filter:tags.tags.query">
+                <h3>#{{ tag.label }}</h3>
             </li>
         </ul>
     </div>

@@ -13,6 +13,7 @@ li img {
 li {
     padding: 10px;
     overflow: auto;
+    border-bottom-color: #ff0000;
 }
 
 li:hover {

@@ -1,1 +1,1 @@
-export * from './log-in.component'
+export * from './tags.component'

@@ -29,7 +29,7 @@ export const routes =
     .state({
       name: 'tweet',
       url: '/tweets',
-      component: 'tweet'
+      component: 'alltweets'
     })
     .state({
       name: 'tweet.tweetId',
