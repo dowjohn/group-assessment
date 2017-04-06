@@ -2,20 +2,16 @@ import styles from './feed.styles'
 import templateUrl from './feed.template'
 
 const controller = class {
-  constructor ($http) {
+  constructor ($http, dataservice) {
     this.$http = $http
+    this.dataservice = dataservice
     this.tweets = []
-    this.getFeed()
+    this.setFeed()
   }
   styles = styles
-  getFeed () {
-    return this.$http.get('http://localhost:8090/api/users/@' + this.creds.username + '/feed')
-    .then((response) => {
-      console.log(response.data)
-      console.log('success')
-      this.tweets = response.data
-    }, (response) => {
-      console.log('failed, jk')
+  setFeed () {
+    this.dataservice.getFeed(this.creds.username).then(value => {
+      this.tweets = value
     })
   }
 }

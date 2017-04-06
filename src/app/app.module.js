@@ -9,6 +9,7 @@ import uiRouter from 'angular-ui-router'
 import { tweet } from 'components/tweet'
 import { tweetDumb } from 'components/tweet-dumb'
 import { feed } from 'components/feed'
+import { dataservice } from 'services/dataservice'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -28,6 +29,7 @@ export default
     .component('tweet', tweet)
     .component('tweetDumb', tweetDumb)
     .component('feed', feed)
+    .service('dataservice', dataservice)
     .config(config)
     .config(routes)
     .run(run)

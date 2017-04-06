@@ -1,16 +1,16 @@
-class Dataservice {
-  constructor ($http, logger) {
+export const dataservice = class {
+  constructor ($http, $log) {
     this.$http = $http
-    this.logger = logger
+    // this.logger = logger
   }
 
   getFeed (username) {
     return this.$http.get('http://localhost:8090/api/users/@' + username + '/feed')
-    .then(function successCallback (response) {
+    .then((response) => {
       console.log(response.data)
       console.log('success')
-      return response.data.results
-    }, function errorCallback (error) {
+      return response.data
+    }, (error) => {
       this.logger.error('failed, jk', error.data)
     })
   }
