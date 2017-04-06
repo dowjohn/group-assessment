@@ -17,19 +17,25 @@ const controller = class {
   passCreds = ''
 
   checkCreds () {
-    const credentials = {
+    const creds = {
       username: this.userCreds,
       password: this.passCreds
     }
-    return credentials
+    return creds
   }
 
   validateCreds () {
     console.log('button do work')
     this.$http.post('http://10.1.1.203:8090/api/validate/login', this.checkCreds())
-    .then(function successCallback (response) {
+    .then((response) => {
+      if (response.data === true) {
+        this.credentials.username = this.userCreds
+        this.credentials.password = this.passCreds
+      } else {
+        console.log('nah dude')
+      }
       console.log(response)
-    }, function errorCallback (response) {
+    }, (response) => {
       console.log(response)
     })
   }
@@ -75,7 +81,7 @@ export const createUser = {
   templateUrl,
   controller,
   bindings: {
-    test: '='
+    credentials: '='
   },
   controllerAs: 'createUser'
 }

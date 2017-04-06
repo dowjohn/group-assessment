@@ -4,8 +4,10 @@ import templateUrl from './app.template'
 const controller =
   /* @ngInject */
   class {
-    username = 'loggedinorsomething'
-    password = 'whatwhatwhat'
+    credentials = {
+      username: '',
+      password: ''
+    }
   }
 
 export const baseApp = {
