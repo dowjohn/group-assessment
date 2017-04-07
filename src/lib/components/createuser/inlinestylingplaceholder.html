@@ -68,7 +68,7 @@
                 </div>
               </md-input-container>
             </form>
-              <p>{{createUser.postUser}}</p>
+
 
 
             <!-- </md-content> -->
@@ -80,7 +80,9 @@
 
               <md-input-container flex="50">
                 <label>Username</label>
-                <input required name="username" ng-model="user.username">
+                <input
+                required name="username"
+                ng-model="createUser.userCreds">
                 <div ng-messages="user.username.$error">
                   <div ng-message="required">This is required.</div>
                 </div>
@@ -88,7 +90,10 @@
 
             <md-input-container flex="50">
                 <label>Password</label>
-                <input required name="password" ng-model="user.password" type="password">
+                <input
+                required name="password"
+                ng-model="createUser.passCreds"
+                type="password">
                 <div ng-messages="user.password.$error">
                   <div ng-message="required">This is required.</div>
                 </div>
@@ -96,7 +101,11 @@
 
               <md-input-container layout-align="center center">
                 <div layout="row" layout-sm="column" layout-margin>
-                  <md-button class="md-raised md-primary" flex="50" flex-sm="100">Login</md-button>
+                  <md-button
+                  ng-click="createUser.validateCreds()"
+                  class="md-raised md-primary"
+                  flex="50"
+                  flex-sm="100">Login</md-button>
                 </div>
               </md-input-container>
 

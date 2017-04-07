@@ -7,6 +7,7 @@ import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
 import { tweets } from 'components/tweets'
+import { tweet } from 'components/tweet'
 import { userDetails } from 'components/userDetails'
 import { users } from 'components/users'
 import { tags } from 'components/tags'
@@ -18,13 +19,10 @@ import { feed } from 'components/feed'
 
 import { dataservice } from 'services/dataservice'
 
-import { createUser } from 'components/createuser'
 import { buttonservice } from 'services/buttonservice'
 import { navBar } from 'components/navbar'
 
 import { tweetDumb } from 'components/tweet-dumb'
-import { feed } from 'components/feed'
-import { dataservice } from 'services/dataservice'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -41,7 +39,6 @@ export default
       uiRouter
     ])
     .component('baseApp', baseApp)
-<<<<<<< HEAD
     .component('tweet', tweet)
 
     .component('createUser', createUser)
@@ -52,7 +49,6 @@ export default
     .component('feed', feed)
     .service('dataservice', dataservice)
 
-=======
     .component('tweets', tweets)
     .component('userDetails', userDetails)
     .component('users', users)
@@ -63,7 +59,7 @@ export default
     .component('profile', profile)
     .component('feed', feed)
     .service('dataservice', dataservice)
->>>>>>> 43e29d046a2c2329566fa21e21d235e2845bf294
+
     .config(config)
     .config(routes)
     .run(run)

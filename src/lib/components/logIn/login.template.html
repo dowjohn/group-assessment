@@ -1,62 +1,119 @@
-<div class="container top">
-    	<div class="row top">
-			<div class="col-md-6 col-md-offset-3">
-				<div class="panel panel-login">
-					<div class="panel-heading">
-						<div class="row">
-							<div class="col-xs-6">
-								<a href="#" class="active" id="login-form-link">Login</a>
-							</div>
-							<div class="col-xs-6">
-								<a href="#" id="register-form-link">Register</a>
-							</div>
-						</div>
-						<hr>
-					</div>
-					<div class="panel-body">
-						<div class="row">
-							<div class="col-lg-12">
-								<form id="login-form" action="http://phpoll.com/login/process" method="post" role="form" style="display: block;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
+<div class="container">
+  <div layout="column" flex id="content" role="main" style="padding-top: 50px;">
+      <md-content layout="vertical" flex id="content">
+        <div layout="row" layout-align="center center" layout-fill>
 
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
-											</div>
-										</div>
-									</div>
-								</form>
-								<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
-									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
-									</div>
-									<div class="form-group">
-										<input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Email Address" value="">
-									</div>
-									<div class="form-group">
-										<input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
-									</div>
-									<div class="form-group">
-										<input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
-									</div>
-									<div class="form-group">
-										<div class="row">
-											<div class="col-sm-6 col-sm-offset-3">
-												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Register Now">
-											</div>
-										</div>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          <md-whiteframe class="md-whiteframe-10dp" layout="column" flex="30" layout-padding>
+            <!-- <md-content md-theme="docs-dark"> -->
+            <form class="" method="post">
+            <div layout="row">
+              <md-input-container flex="50">
+                <label>Username</label>
+                <input
+                required name="username"
+                ng-model="login.username">
+                <div ng-messages="user.username.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+
+            <md-input-container flex="50">
+                <label>Password</label>
+                <input required name="password" ng-model="login.password" type="password">
+                <div ng-messages="user.password.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+            </div>
+
+            <div layout="row">
+              <md-input-container flex="50">
+                <label>First name</label>
+                <input
+                name="firstName"
+                ng-model="login.firstName">
+              </md-input-container>
+
+              <md-input-container flex="50">
+                <label>Last name</label>
+                <input
+                name="lastName"
+                ng-model="login.lastName">
+              </md-input-container>
+            </div>
+
+              <md-input-container>
+                <label>Email</label>
+                <input
+                ng-model="login.email"
+                type="email">
+              </md-input-container>
+
+              <md-input-container>
+                <label>Phone</label>
+                <input
+                ng-model="login.phoneNumber"
+                type="text">
+              </md-input-container>
+              <br>
+
+              <md-input-container layout-align="center center">
+                <div layout="row" layout-sm="column" layout-margin>
+                  <md-button
+                  ng-click='login.postUser()'
+                  class="md-raised md-primary"
+                  flex="50"
+                  flex-sm="100">
+                  Register</md-button>
+                </div>
+              </md-input-container>
+            </form>
+
+
+
+            <!-- </md-content> -->
+          </md-whiteframe>
+
+          <md-whiteframe class="md-whiteframe-10dp" layout="column" flex="30" style="margin: 100px;">
+            <!-- <md-content md-theme="docs-dark"> -->
+              <div layout="row">
+
+              <md-input-container flex="50">
+                <label>Username</label>
+                <input
+                required name="username"
+                ng-model="login.userCreds">
+                <div ng-messages="user.username.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+
+            <md-input-container flex="50">
+                <label>Password</label>
+                <input
+                required name="password"
+                ng-model="login.passCreds"
+                type="password">
+                <div ng-messages="user.password.$error">
+                  <div ng-message="required">This is required.</div>
+                </div>
+              </md-input-container>
+
+              <md-input-container layout-align="center center">
+                <div layout="row" layout-sm="column" layout-margin>
+                  <md-button
+                  ng-click="login.validateCreds()"
+                  class="md-raised md-primary"
+                  flex="50"
+                  flex-sm="100">Login</md-button>
+                </div>
+              </md-input-container>
+
+            </div>
+            <!-- </md-content> -->
+          </md-whiteframe>
+
+        </div>
+      </md-content>
+    </div>
+</div>

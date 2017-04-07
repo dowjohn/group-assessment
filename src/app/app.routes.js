@@ -3,47 +3,41 @@ export const routes =
   ($stateProvider) => {
     $stateProvider
     .state({
-      name: 'baseApp',
-      component: 'baseApp'
+      name: 'login',
+      redirectTo: 'profile',
+      component: 'login'
     })
-    .state({
-      name: 'home',
-      url: '/home',
-      component: 'createUser'
-    })
-    .state({
-      name: 'users',
-      url: '/users',
-      component: 'users'
-    })
+    // .state({
+    //   name: 'users',
+    //   url: '/users',
+    //   component: 'users'
+    // })
 
     // delete later
 
     .state({
+      parent: 'login',
       name: 'profile',
       url: '/profile',
       component: 'profile'
     })
-
-
-
-    .state({
-      name: 'users.userId',
-      url: '/:user',
-      component: 'profile'
-    })
-    .state({
-      name: 'tags',
-      url: '/tags',
-      component: 'tags'
-    })
-    .state({
-      name: 'tweet',
-      url: '/tweets',
-      component: 'alltweets'
-    })
-    .state({
-      name: 'tweet.tweetId',
-      url: '/:tweets'
-    })
+    // .state({
+    //   name: 'users.userId',
+    //   url: '/:user',
+    //   component: 'profile'
+    // })
+    // .state({
+    //   name: 'tags',
+    //   url: '/tags',
+    //   component: 'tags'
+    // })
+    // .state({
+    //   name: 'tweet',
+    //   url: '/tweets',
+    //   component: 'alltweets'
+    // })
+    // .state({
+    //   name: 'tweet.tweetId',
+    //   url: '/:tweets'
+    // })
   }
