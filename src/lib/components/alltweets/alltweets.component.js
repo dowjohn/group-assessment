@@ -12,6 +12,7 @@ const controller = class {
     this.dataservice.getTweets().then(value => {
       this.tweets = value
       console.log(value)
+      console.log('got tweets')
     })
   }
 }
@@ -19,5 +20,8 @@ const controller = class {
 export const alltweets = {
   templateUrl,
   controller,
+  bindings: {
+    credentials: '<'
+  },
   controllerAs: 'alltweets'
 }

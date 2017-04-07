@@ -9,7 +9,7 @@ const controller = class {
   }
   styles = styles
   setFeed () {
-    this.dataservice.getFeed(this.creds.username).then(value => {
+    this.dataservice.getFeed(this.credentials.username).then(value => {
       this.tweets = value
     })
   }
@@ -18,7 +18,7 @@ const controller = class {
 export const feed = {
   templateUrl,
   bindings: {
-    creds: '<'
+    credentials: '<'
   },
   controller,
   controllerAs: 'feed'

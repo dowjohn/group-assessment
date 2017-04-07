@@ -1,10 +1,12 @@
 <div>
-  {{tweetDumb.username}}
+  {{ tweetDumb.tweet.author }}
 </div>
 <div>
-  {{tweetDumb.content}}
+  {{ tweetDumb.tweet.content }}
 </div>
 <div>
-  {{tweetDumb.timestamp}}
+  {{ tweetDumb.tweet.posted | date }}
 </div>
-this is a test
+<md-button class='md-raised' ng-click='tweetDumb.repostTweet()'>Repost</md-button>
+<md-button class='md-raised' ng-click='tweetDumb.replyToTweet()'>Reply</md-button>
+<md-button class='md-raised' ng-click='tweetDumb.likeTweet()'>Like</md-button>

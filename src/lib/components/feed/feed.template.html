@@ -1,5 +1,3 @@
 <div ng-repeat="tweet in feed.tweets">
-  {{tweet.content}}
-  <br>
-  {{tweet.posted | date}}
+  <tweet-dumb credentials='feed.credentials' tweet='tweet'></tweet-dumb>
 </div>

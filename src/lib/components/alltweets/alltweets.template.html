@@ -1,7 +1,6 @@
 <div ng-repeat="tweet in alltweets.tweets">
-  {{tweet.content}}
+  <tweet-dumb credentials='alltweets.credentials' tweet='tweet'></tweet-dumb>
   <br>
-  {{tweet.posted | date}}
   <br>
-  {{tweet.author}}
+  <br>
 </div>

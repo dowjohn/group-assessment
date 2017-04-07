@@ -1,7 +1,7 @@
 export const dataservice = class {
   constructor ($http) {
     this.$http = $http
-    this.ipAddress = '192.168.43.99:8090'
+    this.ipAddress = '10.1.1.203:8090'
   }
   // --------------------------------------------------user services
   getUsers () {
@@ -187,8 +187,8 @@ export const dataservice = class {
     })
   }
 
-  repostTweet (id, tweetRepostObject) {
-    return this.$http.post(`http://${this.ipAddress}/api/tweets/${id}/reply`, tweetRepostObject)
+  repostTweet (id, credentials) {
+    return this.$http.post(`http://${this.ipAddress}/api/tweets/${id}/repost`, credentials)
     .then((response) => {
       console.log('success repostTweet', response.data)
       return response.data
@@ -299,30 +299,30 @@ export const dataservice = class {
   doesUserExist (username) {
     return this.$http.get(`http://${this.ipAddress}/api/validate/username/exists/@${username}`)
     .then((response) => {
-      console.log('success isUserAvailable', response.data)
+      console.log('success doesUserExist', response.data)
       return response.data
     }, (error) => {
-      console.log('failed isUserAvailable', error.data)
+      console.log('failed doesUserExist', error.data)
     })
   }
 
   doesTagExist (tag) {
     return this.$http.get(`http://${this.ipAddress}/api/validate/tag/exists/${tag}`)
     .then((response) => {
-      console.log('success isUserAvailable', response.data)
+      console.log('success doesTagExist', response.data)
       return response.data
     }, (error) => {
-      console.log('failed isUserAvailable', error.data)
+      console.log('failed doesTagExist', error.data)
     })
   }
 
   login (credentials) {
     return this.$http.get(`http://${this.ipAddress}/api/validate/login`, credentials)
     .then((response) => {
-      console.log('success isUserAvailable', response.data)
+      console.log('success login', response.data)
       return response.data
     }, (error) => {
-      console.log('failed isUserAvailable', error.data)
+      console.log('failed login', error.data)
     })
   }
 }

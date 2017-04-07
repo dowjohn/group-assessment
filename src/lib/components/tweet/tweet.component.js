@@ -11,7 +11,7 @@ const controller = class {
   makeTweet () {
     return {
       content: this.content,
-      credentials: this.creds
+      credentials: this.credentials
     }
   }
 
@@ -25,7 +25,7 @@ const controller = class {
 export const tweet = {
   templateUrl,
   bindings: {
-    creds: '<'
+    credentials: '<'
   },
   controller,
   controllerAs: 'tweet'
