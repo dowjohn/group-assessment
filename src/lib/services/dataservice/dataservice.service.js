@@ -5,7 +5,7 @@ export const dataservice = class {
   }
 
   getFeed (username) {
-    return this.$http.get('http://10.1.1.203:8090/api/users/@' + username + '/feed')
+    return this.$http.get('http://96.81.20.210:8080/api/users/@' + username + '/feed')
     .then((response) => {
       console.log(response.data)
       console.log('success')
@@ -16,7 +16,7 @@ export const dataservice = class {
   }
 
   getUsers () {
-    return this.$http.get('http://10.1.1.203:8090/api/users')
+    return this.$http.get('http://96.81.20.210:8080/api/users')
     .then((response) => {
       console.log(response.data)
       console.log('success')
@@ -27,7 +27,7 @@ export const dataservice = class {
   }
 
   postTweet (tweetObject) {
-    this.$http.post('http://10.1.1.203:8090/api/tweets', tweetObject)
+    this.$http.post('http://96.81.20.210:8080/api/tweets', tweetObject)
     .then(function successCallback (response) {
       console.log('success')
     }, function errorCallback (response) {
@@ -36,7 +36,7 @@ export const dataservice = class {
   }
 
   getTweets () {
-    return this.$http.get('http://10.1.1.203:8090/api/tweets')
+    return this.$http.get('http://96.81.20.210:8080/api/tweets')
     .then((response) => {
       console.log(response.data)
       console.log('success')

@@ -9,17 +9,28 @@ export const routes =
     .state({
       name: 'home',
       url: '/home',
-      component: 'logIn'
+      component: 'createUser'
     })
     .state({
       name: 'users',
       url: '/users',
       component: 'users'
     })
+
+    // delete later
+
+    .state({
+      name: 'profile',
+      url: '/profile',
+      component: 'profile'
+    })
+
+
+
     .state({
       name: 'users.userId',
       url: '/:user',
-      component: 'userDetails'
+      component: 'profile'
     })
     .state({
       name: 'tags',

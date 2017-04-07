@@ -4,11 +4,11 @@ import templateUrl from './app.template'
 const controller =
 /* @ngInject */
   class {
-    styles = styles
     credentials = {
-      username: 'string',
-      password: 'string'
+      username: '',
+      password: ''
     }
+    styles = styles
   }
 
 export const baseApp = {

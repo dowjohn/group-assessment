@@ -3,24 +3,13 @@
   <br>
   {{tweet.posted | date}}
 </div> -->
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">
-        <img alt="Squatters" src="https://www.defenx.com/www/assets/img/solutions-icons/logo-S.png" width="25">
-      </a>
-    </div>
-  </div>
-</nav>
-
+<tweets></tweets>
 <div class="container">
     <div class="row">
         <ul class="box">
-          <input size="25" placeholder="Find Tweets" ng-model="alltweets.tweets.query">
-
-            <li ng-repeat="tweet in alltweets.tweets | filter:alltweets.tweets.query">
-                <h3>#{{ tweet.label }}</h3>
+            <li ng-repeat="tweet in alltweets.tweets">
+                <p>{{ tweet.content }}</p>
+                <p>@{{ tweet.author }}</p>
             </li>
         </ul>
     </div>

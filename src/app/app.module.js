@@ -9,9 +9,12 @@ import uiRouter from 'angular-ui-router'
 import { tweets } from 'components/tweets'
 import { userDetails } from 'components/userDetails'
 import { users } from 'components/users'
-import { logIn } from 'components/logIn'
 import { tags } from 'components/tags'
 import { alltweets } from 'components/alltweets'
+import { createUser } from 'components/createUser'
+import { login } from 'components/login'
+import { profile } from 'components/profile'
+import { feed } from 'components/feed'
 
 import { dataservice } from 'services/dataservice'
 
@@ -19,7 +22,6 @@ import { baseApp } from './app.component'
 import { config } from './app.config'
 import { routes } from './app.routes'
 import { run } from './app.run'
-
 
 export default
   angular
@@ -34,9 +36,12 @@ export default
     .component('tweets', tweets)
     .component('userDetails', userDetails)
     .component('users', users)
-    .component('logIn', logIn)
     .component('tags', tags)
     .component('alltweets', alltweets)
+    .component('createUser', createUser)
+    .component('login', login)
+    .component('profile', profile)
+    .component('feed', feed)
     .service('dataservice', dataservice)
     .config(config)
     .config(routes)
