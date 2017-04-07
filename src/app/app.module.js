@@ -10,6 +10,7 @@ import { tweet } from 'components/tweet'
 
 import { createUser } from 'components/createuser'
 import { buttonservice } from 'services/buttonservice'
+import { navBar } from 'components/navbar'
 
 import { tweetDumb } from 'components/tweet-dumb'
 import { feed } from 'components/feed'
@@ -34,6 +35,7 @@ export default
 
     .component('createUser', createUser)
     .service('buttonservice', buttonservice)
+    .component('navBar', navBar)
 
     .component('tweetDumb', tweetDumb)
     .component('feed', feed)

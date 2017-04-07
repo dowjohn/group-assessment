@@ -3,7 +3,7 @@ export const buttonservice = class {
     this.$http = $http
   }
 
-  // I will fix this later
+  // TODO I will fix this later
   validateCreds (credentials) {
     this.$http.post('http://localhost:8090/api/validate/login')
     .then((response) => {
@@ -64,6 +64,17 @@ export const buttonservice = class {
       }, (error) => {
         this.logger.error('failed', error.data)
       })
+  }
+
+  patchUser (username, credentials, profile) {
+    return this.$http.patch('http://localhost:8090/api', credentials, profile)
+    .then((response) => {
+      console.log(response.data)
+      console.log('success')
+      return response.data
+    }, (error) => {
+      this.logger.error('failed', error.data)
+    })
   }
 
   deleteTweet (tweetId, credentials) {

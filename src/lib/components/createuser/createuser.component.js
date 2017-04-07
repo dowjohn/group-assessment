@@ -70,11 +70,6 @@ const controller = class {
       console.log('failed')
     })
   }
-
-  testClick () {
-    console.log(this.makeUser())
-    console.log('check if makeUser is something')
-  }
 }
 
 export const createUser = {
