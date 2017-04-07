@@ -2,8 +2,9 @@ import styles from './tweet.styles'
 import templateUrl from './tweet.template'
 
 const controller = class {
-  constructor (dataservice) {
+  constructor (dataservice, userstatusservice) {
     this.dataservice = dataservice
+    this.userstatusservice = userstatusservice
   }
   styles = styles
   content = ''
@@ -11,7 +12,7 @@ const controller = class {
   makeTweet () {
     return {
       content: this.content,
-      credentials: this.credentials
+      credentials: this.userstatusservice.credentials
     }
   }
 
@@ -24,9 +25,6 @@ const controller = class {
 
 export const tweet = {
   templateUrl,
-  bindings: {
-    credentials: '<'
-  },
   controller,
   controllerAs: 'tweet'
 }

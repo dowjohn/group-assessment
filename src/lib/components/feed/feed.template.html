@@ -1,3 +1,6 @@
-<div ng-repeat="tweet in feed.tweets">
-  <tweet-dumb credentials='feed.credentials' tweet='tweet'></tweet-dumb>
+<div ng-if="feed.userstatusservice.isLoggedIn">
+  <div ng-repeat="tweet in feed.tweets">
+    <tweet-dumb tweet='tweet'>
+    </tweet-dumb>
+  </div>
 </div>

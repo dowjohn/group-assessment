@@ -7,6 +7,7 @@ const controller = class {
     this.tweets = []
     this.setTweets()
   }
+
   styles = styles
   setTweets () {
     this.dataservice.getTweets().then(value => {
@@ -20,8 +21,5 @@ const controller = class {
 export const alltweets = {
   templateUrl,
   controller,
-  bindings: {
-    credentials: '<'
-  },
   controllerAs: 'alltweets'
 }

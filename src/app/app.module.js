@@ -7,12 +7,16 @@ import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
 import { tweet } from 'components/tweet'
+
+import { createUser } from 'components/createuser'
+import { navBar } from 'components/navbar'
 import { tweetDumb } from 'components/tweet-dumb'
 import { feed } from 'components/feed'
 import { alltweets } from 'components/alltweets'
 
 import { dataservice } from 'services/dataservice'
 import { userstatusservice } from 'services/userstatusservice'
+import { buttonservice } from 'services/buttonservice'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -30,9 +34,12 @@ export default
     ])
     .component('baseApp', baseApp)
     .component('tweet', tweet)
+    .component('createUser', createUser)
+    .component('navBar', navBar)
     .component('tweetDumb', tweetDumb)
     .component('feed', feed)
     .component('alltweets', alltweets)
+    .service('buttonservice', buttonservice)
     .service('dataservice', dataservice)
     .service('userstatusservice', userstatusservice)
     .config(config)

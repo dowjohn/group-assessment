@@ -1,7 +1,7 @@
 export const dataservice = class {
   constructor ($http) {
     this.$http = $http
-    this.ipAddress = '10.1.1.203:8090'
+    this.ipAddress = '192.168.43.99:8090'
   }
   // --------------------------------------------------user services
   getUsers () {
@@ -73,7 +73,6 @@ export const dataservice = class {
       console.log('failed unfollowUser', error.data)
     })
   }
-
   getFeed (username) {
     return this.$http.get(`http://${this.ipAddress}/api/users/@${username}/feed`)
     .then((response) => {
@@ -317,7 +316,7 @@ export const dataservice = class {
   }
 
   login (credentials) {
-    return this.$http.get(`http://${this.ipAddress}/api/validate/login`, credentials)
+    return this.$http.post(`http://${this.ipAddress}/api/validate/login`, credentials)
     .then((response) => {
       console.log('success login', response.data)
       return response.data

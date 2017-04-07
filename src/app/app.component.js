@@ -4,11 +4,10 @@ import templateUrl from './app.template'
 const controller =
 /* @ngInject */
   class {
-    styles = styles
-    credentials = {
-      username: 'string',
-      password: 'string'
+    constructor (userstatusservice) {
+      this.userstatusservice = userstatusservice
     }
+    styles = styles
   }
 
 export const baseApp = {
