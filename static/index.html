@@ -6,7 +6,61 @@
     <base href="/">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
-  <body>   
+  <body>
+
+    <md-toolbar layout="row" class="md-whiteframe-z1" layout-align="space-between center">
+    <div layout="row" layout-align="start center">
+      <h1>Squawker</h1>
+    </div>
+
+    <!-- Unhide these elements once user is logged in -->
+    <md-input-container style="display: none">
+        <label style="color: white">Search</label>
+        <!-- Fix the model for searching later. Text input will not work until then
+             and you will see no text typed in until then. -->
+        <input ng-model=""> 
+    </md-input-container>
+      
+    <md-button class="md-raised" aria-label="Learn More" layout-align="end center" style="display:none;">
+        Log off
+    </md-button>
+  </md-toolbar>
+
+  <md-toolbar layout="row" class="md-hue-3" style="margin-top: 50px; width: 20%; margin-left: 20px;">
+      <div class="md-toolbar-tools">
+        <span>Following</span>
+      </div>
+    </md-toolbar>
+
+    <md-content>
+      <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="follower in following" ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ user.follower }}</h3>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+
+    <md-toolbar layout="row" class="md-hue-3" style="margin-top: 50px; width: 20%; margin-left: 20px;">
+      <div class="md-toolbar-tools">
+        <span>Followers</span>
+      </div>
+    </md-toolbar>
+
+    <md-content>
+      <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="follower in followers" ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ user.follower }}</h3>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+
+
+
+
     <base-app>
 
     </base-app>
