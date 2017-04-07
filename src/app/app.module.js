@@ -9,6 +9,7 @@ import uiRouter from 'angular-ui-router'
 import { tweet } from 'components/tweet'
 
 import { createUser } from 'components/createuser'
+import { buttonservice } from 'services/buttonservice'
 
 import { tweetDumb } from 'components/tweet-dumb'
 import { feed } from 'components/feed'
@@ -32,6 +33,7 @@ export default
     .component('tweet', tweet)
 
     .component('createUser', createUser)
+    .service('buttonservice', buttonservice)
 
     .component('tweetDumb', tweetDumb)
     .component('feed', feed)

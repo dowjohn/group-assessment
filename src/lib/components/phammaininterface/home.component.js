@@ -1,5 +1,5 @@
-import styles from './follow.styles'
-import templateUrl from './follow.template'
+import styles from './home.styles'
+import templateUrl from './home.template'
 
 const controller = class {
   static $inject = ['$http']
@@ -9,11 +9,11 @@ const controller = class {
   styles = styles
 }
 
-export const follow = {
+export const home = {
   templateUrl,
   controller,
   bindings: {
-    credentials: '<'
+    creds: '<'
   },
-  controllerAs: 'follow'
+  controllerAs: 'home'
 }
