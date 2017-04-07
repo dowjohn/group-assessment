@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dashboard -- webpack-dev-server --host 10.1.1.203 --colors --hot"
+    "start": "webpack-dashboard -- webpack-dev-server --host 192.168.43.99 --colors --hot"
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
