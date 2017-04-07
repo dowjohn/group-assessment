@@ -28,13 +28,12 @@
           <h2 style="padding:0px;margin:0px;" class="retain-textarea-formatting">{{ tweetDumb.tweet.content }}</h2>
           <div layout="column">
             <div layout="row">
-              <md-button class='md-raised' ng-click='tweetDumb.repostTweet()'>Repost</md-button>
-			  <md-button class='md-raised' ng-click='tweetDumb.replyToTweet()'>Reply</md-button>
-			  <md-button class='md-raised' ng-click='tweetDumb.likeTweet()'>Like</md-button>
+              <md-button class='md-raised md-primary' ng-click='tweetDumb.likeTweet()'>Like</md-button>
+	      <md-button class='md-raised md-primary' ng-click='tweetDumb.repostTweet()'>Repost</md-button>
+	      <md-button class='md-raised md-primary' ng-click='tweetDumb.replyToTweet()'>Reply</md-button>
             </div>
           </div>
         </div>
       </md-list-item>
     </md-list>
   </md-content>
-</md-content>
