@@ -1,12 +1,40 @@
-<div>
-  {{ tweetDumb.tweet.author }}
+<!-- Tweet input box. Change the submit function and the model to the correct ones. -->
+<div style="align-items: center;">
+    <form name="userForm" ng-submit="submitTweet()" class="ng-pristine ng-valid ng-valid-mindate ng-valid-maxdate ng-valid-filtered ng-valid-valid ng-valid-required ng-valid-pattern">
+      <div layout="row">
+        <div flex="50" flex-offset="25">
+          <md-input-container class="md-block">
+            <label>What's new?</label>
+            <textarea md-select-on-focus="" rows="5" max-rows="5" ng-model="tweet.message" md-maxlength="150"></textarea>
+          </md-input-container>
+        </div>
+      </div>
+      <div layout="column" layout-align="end end" flex="75">
+        <div>
+          <md-button class="md-raised md-primary" type="submit">Tweet</md-button>
+        </div>
+      </div>
+    </form>
 </div>
-<div>
-  {{ tweetDumb.tweet.content }}
-</div>
-<div>
-  {{ tweetDumb.tweet.posted | date }}
-</div>
-<md-button class='md-raised' ng-click='tweetDumb.repostTweet()'>Repost</md-button>
-<md-button class='md-raised' ng-click='tweetDumb.replyToTweet()'>Reply</md-button>
-<md-button class='md-raised' ng-click='tweetDumb.likeTweet()'>Like</md-button>
+
+<!-- Main feed list. Change the ng-click and the ng-repeat to the correct functions. -->
+<md-content>
+    <md-list flex>
+      <md-subheader class="md-no-sticky">My feed</md-subheader>
+      <md-list-item class="md-2-line">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{ tweetDumb.tweet.author }}</h3>
+          <h3>{{ tweetDumb.tweet.posted | date }}</h3>
+          <h2 style="padding:0px;margin:0px;" class="retain-textarea-formatting">{{ tweetDumb.tweet.content }}</h2>
+          <div layout="column">
+            <div layout="row">
+              <md-button class='md-raised' ng-click='tweetDumb.repostTweet()'>Repost</md-button>
+			  <md-button class='md-raised' ng-click='tweetDumb.replyToTweet()'>Reply</md-button>
+			  <md-button class='md-raised' ng-click='tweetDumb.likeTweet()'>Like</md-button>
+            </div>
+          </div>
+        </div>
+      </md-list-item>
+    </md-list>
+  </md-content>
+</md-content>
