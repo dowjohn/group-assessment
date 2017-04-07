@@ -19,7 +19,7 @@ const controller = class {
   }
 
   postTweet () {
-    this.$http.post('http://10.1.1.203:8090/api/tweets', this.makeTweet())
+    this.$http.post('http://localhost:8090/api/tweets', this.makeTweet())
     .then(function successCallback (response) {
       console.log('success')
     }, function errorCallback (response) {

@@ -3,8 +3,9 @@ import templateUrl from './home.template'
 
 const controller = class {
   static $inject = ['$http']
-  constructor ($http) {
+  constructor ($http, buttonservice) {
     this.$http = $http
+    this.buttonservice = buttonservice
   }
   styles = styles
 }

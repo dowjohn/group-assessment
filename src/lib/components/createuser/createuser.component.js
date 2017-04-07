@@ -26,15 +26,15 @@ const controller = class {
 
   validateCreds () {
     console.log('button do work')
-    this.$http.post('http://10.1.1.203:8090/api/validate/login', this.checkCreds())
+    this.$http.post('http://localhost:8090/api/validate/login', this.checkCreds())
     .then((response) => {
       if (response.data === true) {
+        console.log(response)
         this.credentials.username = this.userCreds
         this.credentials.password = this.passCreds
       } else {
         console.log('nah dude')
       }
-      console.log(response)
     }, (response) => {
       console.log(response)
     })
@@ -59,7 +59,7 @@ const controller = class {
 
   postUser () {
     console.log('see if button is going through')
-    this.$http.post('http://10.1.1.203:8090/api/users', this.makeUser())
+    this.$http.post('http://localhost:8090/api/users', this.makeUser())
     .then(function successCallback (response) {
       // this callback will be called asynchronously
       // when the response is available

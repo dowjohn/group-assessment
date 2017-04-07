@@ -5,7 +5,7 @@ export const buttonservice = class {
 
   // I will fix this later
   validateCreds (credentials) {
-    this.$http.post('http://10.1.1.203:8090/api/validate/login')
+    this.$http.post('http://localhost:8090/api/validate/login')
     .then((response) => {
       if (response.data === true) {
         console.log('freedommmmmmm')
@@ -21,7 +21,7 @@ export const buttonservice = class {
   }
 
   followUser (username) {
-    return this.$http.post('http://10.1.1.203:8090/api/users/@' + username + '/follow')
+    return this.$http.post('localhost:8090/api/users/@' + username + '/follow')
     .then((response) => {
       console.log(response.data)
       console.log('success')
@@ -32,7 +32,7 @@ export const buttonservice = class {
   }
 
   unfollowUser (username) {
-    return this.$http.post('http://10.1.1.203:8090/api/users/@' + username + '/unfollow')
+    return this.$http.post('http://localhost:8090/api/users/@' + username + '/unfollow')
     .then((response) => {
       console.log(response.data)
       console.log('success')
@@ -44,7 +44,7 @@ export const buttonservice = class {
 
   likeTweet (tweetId, credentials) {
     // need to do something with credentials
-    return this.$http.post('http://10.1.1.203:8090/api/tweets/' + tweetId + '/like', credentials)
+    return this.$http.post('http://localhost:8090/api/tweets/' + tweetId + '/like', credentials)
     .then((response) => {
       console.log(response.data)
       console.log('success')
@@ -56,7 +56,7 @@ export const buttonservice = class {
 
   deleteUser (username, credentials) {
       // need to do something with credentials
-    return this.$http.delete('http://10.1.1.203:8090/api/@' + username, credentials)
+    return this.$http.delete('http://localhost:8090/api/@' + username, credentials)
       .then((response) => {
         console.log(response.data)
         console.log('success')
@@ -67,7 +67,7 @@ export const buttonservice = class {
   }
 
   deleteTweet (tweetId, credentials) {
-    return this.$http.delete('http://10.1.1.203:8090/api/' + tweetId)
+    return this.$http.delete('http://localhost:8090/api/' + tweetId)
     .then((response) => {
       console.log(response.data)
       console.log('success')
