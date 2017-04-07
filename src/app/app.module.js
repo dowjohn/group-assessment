@@ -12,6 +12,7 @@ import { feed } from 'components/feed'
 import { alltweets } from 'components/alltweets'
 
 import { dataservice } from 'services/dataservice'
+import { userstatusservice } from 'services/userstatusservice'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -33,6 +34,7 @@ export default
     .component('feed', feed)
     .component('alltweets', alltweets)
     .service('dataservice', dataservice)
+    .service('userstatusservice', userstatusservice)
     .config(config)
     .config(routes)
     .run(run)
