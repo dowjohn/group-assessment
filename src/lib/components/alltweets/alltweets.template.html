@@ -1,0 +1,16 @@
+<!-- <div ng-repeat="tweet in alltweets.tweets">
+  {{tweet.content}}
+  <br>
+  {{tweet.posted | date}}
+</div> -->
+<tweets></tweets>
+<div class="container">
+    <div class="row">
+        <ul class="box">
+            <li ng-repeat="tweet in alltweets.tweets">
+                <p>{{ tweet.content }}</p>
+                <p>@{{ tweet.author }}</p>
+            </li>
+        </ul>
+    </div>
+</div>

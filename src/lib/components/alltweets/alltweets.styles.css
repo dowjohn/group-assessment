@@ -1,0 +1,14 @@
+.container {
+  margin-left: 50px;
+}
+
+li {
+    padding: 10px;
+    overflow: auto;
+}
+
+li:hover {
+    background: #2ecc71;
+    color: #ecf0f1;
+    cursor: pointer;
+}

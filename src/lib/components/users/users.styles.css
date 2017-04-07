@@ -1,0 +1,14 @@
+body {
+    background-color: #63ce87;
+}
+
+li {
+    padding: 10px;
+    overflow: auto;
+}
+
+li:hover {
+    background: #2ecc71;
+    color: #ecf0f1;
+    cursor: pointer;
+}

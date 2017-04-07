@@ -1,1 +1,1 @@
-export * from './createuser.component'
+export * from './createUser.component'

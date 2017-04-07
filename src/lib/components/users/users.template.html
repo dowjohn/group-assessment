@@ -1,0 +1,23 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">
+        <img alt="Squatters" src="https://www.defenx.com/www/assets/img/solutions-icons/logo-S.png" width="25">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <ul class="box">
+          <input size="25" placeholder="Find User" ng-model="users.users.query">
+
+            <li ng-repeat="user in users.users | filter:users.users.query">
+                <h3>{{ user.name }}</h3>
+                <h4>{{ user.handle }}</h4>
+                <p>{{ user.bio }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
