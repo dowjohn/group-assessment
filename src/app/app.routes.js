@@ -1,9 +1,15 @@
 export const routes =
   /* @ngInject */
   ($stateProvider) => {
-    $stateProvider.state({
-      name: 'home',
-      url: '/home',
-      component: 'baseApp'
+    $stateProvider
+    .state({
+      name: 'feed',
+      url: '/feed',
+      component: 'feed'
+    })
+    .state({
+      name: 'login',
+      url: '/login',
+      component: 'createuser'
     })
   }
