@@ -7,6 +7,122 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   </head>
   <body>
+
+    <md-toolbar layout="row" class="md-whiteframe-z1" layout-align="space-between center">
+    <div layout="row" layout-align="start center">
+      <h1 style="margin: 20px;">Squawker</h1>
+    </div>
+
+    <!-- Unhide these elements once user is logged in -->
+    <md-input-container style="display: none">
+        <label style="color: white">Search</label>
+        <!-- Fix the model for searching later. Text input will not work until then
+             and you will see no text typed in until then. -->
+        <input ng-model=""> 
+    </md-input-container>
+
+
+    <!-- Only show on homepage -->
+    <div layout="row" layout-align="end center">
+      <md-button class="md-raised" aria-label="Learn More" layout-align="end" style="display: none;">
+        Profile
+      </md-button>
+
+      <md-button class="md-raised" aria-label="Learn More" layout-align="end" style="">
+        Home
+      </md-button>
+
+      <md-button class="md-raised" aria-label="Learn More" layout-align="end center" style="">
+          Log off
+      </md-button>
+    </div>
+  </md-toolbar>
+
+  <md-content layout="row" layout-align="center center">
+    <h1>{ Username goes here }</h1>    
+  </md-content>
+
+  <div style="align-items: center;">
+        <form name="userForm" ng-submit="submitTweet()" class="ng-pristine ng-valid ng-valid-mindate ng-valid-maxdate ng-valid-filtered ng-valid-valid ng-valid-required ng-valid-pattern">
+          <div layout="row">
+            <div flex="50" flex-offset="25">
+              <md-input-container class="md-block">
+                <label>What's new?</label>
+                <textarea md-select-on-focus="" rows="5" max-rows="5" ng-model="tweet.message" md-maxlength="150"></textarea>
+              </md-input-container>
+            </div>
+          </div>
+          <div layout="column" layout-align="end end" flex="75">
+            <div>
+              <md-button class="md-raised md-primary" type="submit">Tweet</md-button>
+            </div>
+          </div>
+        </form>
+  </div>
+
+  <md-content>
+        <md-list flex>
+          <md-subheader class="md-no-sticky">My feed</md-subheader>
+          <md-list-item class="md-2-line" ng-repeat="tweet in tweets" ng-click="showAdvanced($event, item)">
+            <div class="md-list-item-text" layout="column">
+              <h3>{{ tweet.author }}</h3>
+              <h2 style="padding:0px;margin:0px;" class="retain-textarea-formatting">{{ tweet.content }}</h2>
+              <div layout="column">
+                <div layout="row">
+                  <md-button class="md-raised" ng-class="item.isLiked ? 'md-warn' : 'md-primary'" ng-click="like(item)">Like</md-button>
+                </div>
+              </div>
+            </div>
+          </md-list-item>
+        </md-list>
+      </md-content>
+    </md-content>
+
+  <md-content layout="column" style="margin-top: 50px; width: 20%; margin-left: 20px;">
+
+    <md-toolbar layout="row" class="md-hue-3">
+        <div class="md-toolbar-tools" layout-align="center center">
+          <span>Following</span>
+        </div>
+      </md-toolbar>
+
+      <md-content layout="row">
+        <md-list flex="grow">
+          <md-list-item class="md-3-line"  ng-click="null">
+            <div class="md-list-item-text" layout="row">
+              <h3>Name 1</h3>
+            </div>
+          </md-list-item>
+
+          <md-list-item class="md-3-line"  ng-click="null">
+            <div class="md-list-item-text" layout="row">
+              <h3>Name 2</h3>
+            </div>
+          </md-list-item>
+
+        </md-list>
+      </md-content>
+  </md-content>
+    
+  <md-content layout="column" style="margin-top: 50px; width: 20%; margin-left: 20px;">
+    <md-toolbar layout="row" class="md-hue-3">
+      <div class="md-toolbar-tools" layout-align="center center">
+        <span>Followers</span>
+      </div>
+    </md-toolbar>
+
+    <md-content>
+      <md-list flex>
+        <md-list-item class="md-3-line" ng-repeat="follower in followers" ng-click="null">
+          <div class="md-list-item-text" layout="column">
+            <h3>{{ user.follower }}</h3>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </md-content>
+
+
     <base-app>
     
     </base-app>
