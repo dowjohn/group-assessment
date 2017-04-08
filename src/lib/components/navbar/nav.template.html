@@ -13,16 +13,17 @@
 
   <!-- Only show on homepage -->
   <div layout="row" layout-align="end center">
-    <md-button class="md-raised" aria-label="Learn More" layout-align="end" style="display: none;">
+    <md-button ng-show='navBar.userstatusservice.isLoggedIn' ng-click='navBar.goToProfile()' class="md-raised" aria-label="Learn More" layout-align="end">
       Profile
     </md-button>
 
-  <!-- Shown only when profile is viewed -->
-  <md-button class="md-raised" aria-label="Learn More" layout-align="end" style="">
-    Home
-  </md-button>
+    <!-- Shown only when profile is viewed -->
+    <md-button ng-show='navBar.userstatusservice.isLoggedIn' ng-click='navBar.goToFeed()' class="md-raised" aria-label="Learn More" layout-align="end">
+      Feed
+    </md-button>
 
-  <md-button ng-click='navBar.logOut()' class="md-raised" aria-label="Learn More" layout-align="end center">
-    Log off
-  </md-button>
+    <md-button ng-show='navBar.userstatusservice.isLoggedIn' ng-click='navBar.logOut()' class="md-raised" aria-label="Learn More" layout-align="end center">
+      Log off
+    </md-button>
+  </div>
 </md-toolbar>

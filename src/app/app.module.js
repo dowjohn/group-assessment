@@ -13,6 +13,7 @@ import { navBar } from 'components/navbar'
 import { tweetDumb } from 'components/tweet-dumb'
 import { feed } from 'components/feed'
 import { alltweets } from 'components/alltweets'
+import { profile } from 'components/profile'
 
 import { dataservice } from 'services/dataservice'
 import { userstatusservice } from 'services/userstatusservice'
@@ -39,6 +40,7 @@ export default
     .component('tweetDumb', tweetDumb)
     .component('feed', feed)
     .component('alltweets', alltweets)
+    .component('profile', profile)
     .service('buttonservice', buttonservice)
     .service('dataservice', dataservice)
     .service('userstatusservice', userstatusservice)

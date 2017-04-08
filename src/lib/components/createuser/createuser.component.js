@@ -2,9 +2,10 @@ import styles from './createuser.styles'
 import templateUrl from './createuser.template'
 
 const controller = class {
-  constructor (dataservice, userstatusservice) {
+  constructor (dataservice, userstatusservice, $state) {
     this.dataservice = dataservice
     this.userstatusservice = userstatusservice
+    this.$state = $state
   }
   styles = styles
   username = ''
@@ -15,6 +16,10 @@ const controller = class {
   phoneNumber = ''
   userCreds = ''
   passCreds = ''
+
+  goto () {
+    this.$state.go('feed')
+  }
 
   checkCreds () {
     const creds = {
@@ -31,6 +36,7 @@ const controller = class {
       if (response === true) {
         console.log('login success')
         this.userstatusservice.logIn(this.checkCreds())
+        this.goto()
       } else {
         console.log('returned false, failed login')
         this.userstatusservice.logOut()

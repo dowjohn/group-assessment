@@ -2,8 +2,9 @@ import styles from './feed.styles'
 import templateUrl from './feed.template'
 
 const controller = class {
-  constructor (dataservice, userstatusservice) {
+  constructor (dataservice, userstatusservice, $interval) {
     this.dataservice = dataservice
+    this.$interval = $interval
     this.tweets = []
     this.userstatusservice = userstatusservice
     this.setFeed()
