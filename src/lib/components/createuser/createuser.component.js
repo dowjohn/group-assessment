@@ -58,16 +58,14 @@ const controller = class {
   }
 
   postUser () {
-    console.log('see if button is going through')
-    this.$http.post('http://localhost:8090/api/users', this.makeUser())
-    .then(function successCallback (response) {
-      // this callback will be called asynchronously
-      // when the response is available
-      console.log('success')
-    }, function errorCallback (response) {
-      // called asynchronously if an error occurs
-      // or server returns response with an error status.
-      console.log('failed')
+    this.dataservice.postUser(this.makeUser())
+    .then(response => {
+      console.log(response)
+      if (response.username !== null) {
+        this.userCreds = response.username
+        this.passCreds = this.password
+        this.userstatusservice.logIn(this.checkCreds())
+      }
     })
   }
 }

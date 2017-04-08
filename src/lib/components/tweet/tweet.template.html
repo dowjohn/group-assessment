@@ -1,7 +1,18 @@
-<div class="">
-  <form class="" method="post">
-    <label for="">TWEET</label>
-    <textarea ng-model="tweet.content" type="text" name="" value=""></textarea>
-    <md-button ng-click='tweet.tweet(tweet.tweetObject)' class="md-raised">tweet</md-button>
-  </form>
+<!-- Tweet input box. -->
+<div style="align-items: center;">
+    <form name="userForm" method="post" class="ng-pristine ng-valid ng-valid-mindate ng-valid-maxdate ng-valid-filtered ng-valid-valid ng-valid-required ng-valid-pattern">
+      <div layout="row">
+        <div flex="50" flex-offset="25">
+          <md-input-container class="md-block">
+            <label>What's new?</label>
+            <textarea md-select-on-focus="" type="text" rows="5" max-rows="5" ng-model="tweet.content" md-maxlength="255"></textarea>
+          </md-input-container>
+        </div>
+      </div>
+      <div layout="column" layout-align="end end" flex="75">
+        <div>
+          <md-button class="md-raised md-primary" type="submit" ng-click="tweet.tweet(tweet.tweetObject)">Tweet</md-button>
+        </div>
+      </div>
+    </form>
 </div>

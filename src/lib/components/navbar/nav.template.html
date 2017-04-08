@@ -1,17 +1,28 @@
 <md-toolbar layout="row" class="md-whiteframe-z1" layout-align="space-between center">
-    <div layout="row" layout-align="start center">
-      <h1>Squawker</h1>
-    </div>
+  <div layout="row" layout-align="start center">
+    <h1>Squawker</h1>
+  </div>
 
-    <!-- Unhide these elements once user is logged in -->
-    <md-input-container>
-      <label style="color: white">Search</label>
-      <!-- Fix the model for searching later. Text input will not work until then
-           and you will see no text typed in until then. -->
-      <input ng-model="">
-    </md-input-container>
+  <!-- Unhide these elements once user is logged in -->
+  <md-input-container>
+    <label style="color: white">Search</label>
+    <!-- Fix the model for searching later. Text input will not work until then
+        and you will see no text typed in until then. -->
+    <input ng-model="">
+  </md-input-container>
 
-    <md-button ng-click='navBar.logOut()' class="md-raised" aria-label="Learn More" layout-align="end center">
-      Log off
+  <!-- Only show on homepage -->
+  <div layout="row" layout-align="end center">
+    <md-button class="md-raised" aria-label="Learn More" layout-align="end" style="display: none;">
+      Profile
     </md-button>
+
+  <!-- Shown only when profile is viewed -->
+  <md-button class="md-raised" aria-label="Learn More" layout-align="end" style="">
+    Home
+  </md-button>
+
+  <md-button ng-click='navBar.logOut()' class="md-raised" aria-label="Learn More" layout-align="end center">
+    Log off
+  </md-button>
 </md-toolbar>
