@@ -6,6 +6,7 @@ const controller = class {
     constructor(dataservice) {
         this.dataservice = dataservice
     }
+    
     styles = styles
     content = ''
 

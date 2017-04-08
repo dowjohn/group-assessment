@@ -25,8 +25,6 @@ export const routes =
       component: 'profile'
     })
 
-
-
     .state({
       name: 'users.userId',
       url: '/:user',

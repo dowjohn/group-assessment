@@ -7,12 +7,10 @@ import ngMessages from 'angular-messages'
 import uiRouter from 'angular-ui-router'
 
 import { tweets } from 'components/tweets'
-import { userDetails } from 'components/userDetails'
 import { users } from 'components/users'
 import { tags } from 'components/tags'
 import { alltweets } from 'components/alltweets'
 import { createUser } from 'components/createUser'
-import { login } from 'components/login'
 import { profile } from 'components/profile'
 import { feed } from 'components/feed'
 
@@ -34,12 +32,10 @@ export default
     ])
     .component('baseApp', baseApp)
     .component('tweets', tweets)
-    .component('userDetails', userDetails)
     .component('users', users)
     .component('tags', tags)
     .component('alltweets', alltweets)
     .component('createUser', createUser)
-    .component('login', login)
     .component('profile', profile)
     .component('feed', feed)
     .service('dataservice', dataservice)

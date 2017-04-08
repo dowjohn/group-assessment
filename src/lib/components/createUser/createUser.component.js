@@ -2,10 +2,13 @@ import styles from './createUser.styles'
 import templateUrl from './createUser.template'
 
 const controller = class {
+
   static $inject = ['$http']
+
   constructor ($http) {
     this.$http = $http
   }
+
   styles = styles
   username = ''
   password = ''
@@ -25,8 +28,8 @@ const controller = class {
   }
 
   validateCreds () {
-    console.log('button do work')
-    this.$http.post('http://192.168.43.99:8090/api/validate/login', this.checkCreds())
+    console.log('The button works!')
+    this.$http.post('http://10.1.1.203:8090/api/validate/login', this.checkCreds())
     .then((response) => {
       if (response.data === true) {
         this.credentials.username = this.userCreds
