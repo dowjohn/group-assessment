@@ -17,7 +17,6 @@ import { profile } from 'components/profile'
 
 import { dataservice } from 'services/dataservice'
 import { userstatusservice } from 'services/userstatusservice'
-import { buttonservice } from 'services/buttonservice'
 
 import { baseApp } from './app.component'
 import { config } from './app.config'
@@ -41,7 +40,6 @@ export default
     .component('feed', feed)
     .component('alltweets', alltweets)
     .component('profile', profile)
-    .service('buttonservice', buttonservice)
     .service('dataservice', dataservice)
     .service('userstatusservice', userstatusservice)
     .config(config)
