@@ -13,7 +13,7 @@ const controller = class {
   firstName = ''
   lastName = ''
   email = ''
-  phoneNumber = ''
+  phone = ''
   userCreds = ''
   passCreds = ''
 
@@ -51,7 +51,7 @@ const controller = class {
       firstName: this.firstName,
       lastName: this.lastName,
       email: this.email,
-      phoneNumber: this.phoneNumber
+      phone: this.phone
     }
     const credentials = {
       password: this.password,
@@ -71,6 +71,7 @@ const controller = class {
         this.userCreds = response.username
         this.passCreds = this.password
         this.userstatusservice.logIn(this.checkCreds())
+        this.goto()
       }
     })
   }
