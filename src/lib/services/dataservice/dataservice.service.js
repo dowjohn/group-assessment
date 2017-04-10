@@ -1,7 +1,7 @@
 export const dataservice = class {
   constructor ($http) {
     this.$http = $http
-    this.ipAddress = '10.1.1.223:8090'
+    this.ipAddress = 'localhost:8090'
   }
   // --------------------------------------------------user services
   getUsers () {
