@@ -71,6 +71,7 @@ const controller = class {
         this.userCreds = response.username
         this.passCreds = this.password
         this.userstatusservice.logIn(this.checkCreds())
+        this.goto()
       }
     })
   }
